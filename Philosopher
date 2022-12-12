@@ -1,0 +1,27 @@
+import java.util.Random;
+
+public class Phil extends Thread {
+    public void Eat() {
+    	Random random = new Random();
+    	int i = random.nextInt(100);
+    	i++;
+    	 System.out.println("I eaten " + i + " rice");
+     }
+    public void Sleep(){
+    	
+    	 System.out.println("I'm sleeping");
+     }
+    private boolean toBe = true;
+    public void toBeOrNot() {
+    	if (toBe) {
+    		Sleep();
+    	}
+    	else {
+    		Eat();
+    		toBe = true;
+    	}
+    }
+	public void run() {
+		toBe = false;
+	}
+}
