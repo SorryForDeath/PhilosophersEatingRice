@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) throws InterruptedException {
+		  Phil P1 = new Phil();
+		  Phil P2 = new Phil();
+		  Phil P3 = new Phil();
+		  Phil P4 = new Phil();
+		  Phil P5 = new Phil();
+		  List<Phil> qwe = new ArrayList<>();
+		  qwe.add(P1);  qwe.add(P2); qwe.add(P3); qwe.add(P4); qwe.add(P5);
+		  int k = 0;
+		  while (k < 5) {	
+			  qwe.get(k).start();
+			  qwe.get(k).join();
+			  for (int i = 0; i < 5; i++) {
+				  System.out.print("Philosopher " + i + ": ");
+				  qwe.get(i).toBeOrNot();
+			  }
+			  System.out.println();
+			  k++;
+			  Thread.sleep(3L * 1000L);
+		  }
+	}
+
+}
